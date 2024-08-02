@@ -1,26 +1,24 @@
-import sys from 'node:sys';
+import JSONFileReader from './src/JSONFileReader.js';
+import JSONParser from './src/JSONParser.js';
+import CidadesHTMLReporter from './src/CidadesHTMLReporter.js';
+import CidadesTXTReporter from './src/CidadesTXTReporter.js';
+import ReportProcessor from './src/ReportProcessor.js';
 
-import FormaterHTML from './src/FormaterHTML.js';
-import FormaterTXT from './src/FormaterTXT.js';
-import CitiesReporter from './src/CitiesReporter.js';
+const [cmd, filename, format] = process.argv;
 
-const [cmd, script, param1] = process.argv,
-      filename = './data/cidades-2.json';
+const fileReader = new JSONFileReader();
+const parser = new JSONParser();
 
-const formaterStrategies = {
-  'html': new FormaterHTML(),
-  'txt': new FormaterTXT()
-};
+let reporter;
 
-let reporter = new CitiesReporter({
-      formaterStrategy: formaterStrategies[param1]
-    }),
-    output = reporter.report(filename);
+if (format === 'html') {
+  reporter = new CidadesHTMLReporter();
+} else if (format === 'txt') {
+  reporter = new CidadesTXTReporter();
+} else {
+  throw new Error('Formato não suportado');
+}
 
+const processor = new ReportProcessor(fileReader, parser, reporter);
+const output = processor.process('./data/cidades-2.json');
 console.log(output);
-
-
-
-
-
-
