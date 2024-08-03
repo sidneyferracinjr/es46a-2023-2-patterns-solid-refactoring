@@ -1,27 +1,23 @@
-import fs from 'node:fs';
+import fs from "node:fs";
 
-export default class CitiesReporter {
-  constructor ({ formaterStrategy }) {
+class CitiesReporter {
+  constructor({ formaterStrategy }) {
     this._formaterStrategy = formaterStrategy;
   }
 
-  _read (filename) {
+  _read(filename) {
     this._cities_json = fs.readFileSync(filename);
   }
 
-  _parseJSON () {
+  _parseJSON() {
     this._cities = JSON.parse(this._cities_json);
   }
 
-  report (filename) {
+  report(filename) {
     this._read(filename);
     this._parseJSON();
     return this._formaterStrategy.output(this._cities);
   }
-
 }
 
-
-
-
-
+module.exports = CitiesReporter;

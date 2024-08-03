@@ -1,4 +1,4 @@
-import IReporter from './IReporter.js';
+import IReporter from "./IReporter.js";
 
 export default class CidadesTXTReporter extends IReporter {
   report(cidades) {
@@ -6,7 +6,7 @@ export default class CidadesTXTReporter extends IReporter {
 =============================`;
 
     for (let i = 0; i < cidades.length; i++) {
-      result += '* ' + cidades[i]['Nome'] + '\n';
+      result += "* " + cidades[i]["Nome"] + "\n";
     }
 
     return result;

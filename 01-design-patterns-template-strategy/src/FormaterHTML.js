@@ -1,8 +1,7 @@
-import AbstractFormater from './AbstractFormater.js';
+import IFormater from "./IFormater.js";
 
-export default class FormaterHTML extends AbstractFormater {
-
-  output (cities) {
+export default class FormaterHTML extends IFormater {
+  output(cities) {
     let html = `
   <!DOCTYPE HTML>
   <html>
@@ -16,7 +15,7 @@ export default class FormaterHTML extends AbstractFormater {
   `;
 
     for (let i = 0; i < cities.length; i++) {
-      html += `     <li>${cities[i]['Nome']}</li>\n`;
+      html += `     <li>${cities[i]["Nome"]}</li>\n`;
     }
 
     html += `
@@ -26,5 +25,4 @@ export default class FormaterHTML extends AbstractFormater {
 
     return html;
   }
-
 }

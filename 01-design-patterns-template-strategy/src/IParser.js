@@ -1,5 +1,5 @@
 export default class IParser {
-    parse(data) {
-        throw new Error("Method not implemented");
-    }
+  parse(data) {
+    throw new Error("Method not implemented");
+  }
 }
