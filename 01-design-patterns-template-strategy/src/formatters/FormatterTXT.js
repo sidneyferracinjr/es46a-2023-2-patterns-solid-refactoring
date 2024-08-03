@@ -1,6 +1,6 @@
-import IFormater from "./IFormater.js";
+import IFormatter from "../interfaces/IFormatter.js";
 
-export default class FormaterTXT extends IFormater {
+export default class FormatterTXT extends IFormatter {
   output(cities) {
     let txt = `Relatório de Nomes de Cidades
   =============================\n`;

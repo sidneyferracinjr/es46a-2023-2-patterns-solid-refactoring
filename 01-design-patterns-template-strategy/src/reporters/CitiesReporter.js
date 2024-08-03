@@ -1,8 +1,8 @@
 import fs from "node:fs";
 
 class CitiesReporter {
-  constructor({ formaterStrategy }) {
-    this._formaterStrategy = formaterStrategy;
+  constructor({ formatterStrategy }) {
+    this._formatterStrategy = formatterStrategy;
   }
 
   _read(filename) {
@@ -16,7 +16,7 @@ class CitiesReporter {
   report(filename) {
     this._read(filename);
     this._parseJSON();
-    return this._formaterStrategy.output(this._cities);
+    return this._formatterStrategy.output(this._cities);
   }
 }
 

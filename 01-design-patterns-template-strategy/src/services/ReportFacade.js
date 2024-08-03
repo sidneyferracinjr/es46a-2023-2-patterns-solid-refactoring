@@ -1,5 +1,5 @@
-import JSONFileReader from './JSONFileReader.js';
-import JSONParser from './JSONParser.js';
+import JSONFileReader from './readers/JSONFileReader.js';
+import JSONParser from './parsers/JSONParser.js';
 import ReportProcessor from './ReportProcessor.js';
 
 class ReportFacade {

@@ -1,4 +1,4 @@
-import IParser from "./IParser.js";
+import IParser from "../interfaces/IParser.js";
 
 export default class JSONParser extends IParser {
   parse(data) {

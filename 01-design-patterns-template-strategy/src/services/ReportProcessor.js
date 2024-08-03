@@ -1,10 +1,10 @@
-import FormaterFactory from './FormaterFactory.js';
+import FormatterFactory from './FormatterFactory.js';
 
 class ReportProcessor {
   constructor(fileReader, parser, reporterType) {
     this.fileReader = fileReader;
     this.parser = parser;
-    this.reporterType = FormaterFactory.createFormater(reporterType);
+    this.reporterType = FormatterFactory.createFormatter(reporterType);
   }
 
   process(caminho) {

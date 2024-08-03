@@ -1,6 +1,6 @@
-import IFormater from "./IFormater.js";
+import IFormatter from "../interfaces/IFormatter.js";
 
-export default class FormaterHTML extends IFormater {
+export default class FormatterHTML extends IFormatter {
   output(cities) {
     let html = `
   <!DOCTYPE HTML>
