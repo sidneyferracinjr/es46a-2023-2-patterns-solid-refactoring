@@ -1,5 +1,5 @@
-import FormatterHTML from "./FormatterHTML.js";
-import FormatterTXT from "./FormatterTXT.js";
+import FormatterHTML from "../formatters/FormatterHTML.js";
+import FormatterTXT from "../formatters/FormatterTXT.js";
 
 export default class FormatterFactory {
   static createFormatter(type) {

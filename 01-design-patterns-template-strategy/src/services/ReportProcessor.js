@@ -1,4 +1,4 @@
-import FormatterFactory from './FormatterFactory.js';
+import FormatterFactory from '../factories/FormatterFactory.js';
 
 class ReportProcessor {
   constructor(fileReader, parser, reporterType) {

@@ -1,4 +1,4 @@
-import ReportFacade from './src/ReportFacade.js';
+import ReportFacade from './src/services/ReportFacade.js';
 
 const [cmd, filename, filepath, format] = process.argv;
 
